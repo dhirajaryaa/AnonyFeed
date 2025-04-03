@@ -1,10 +1,9 @@
 import mongoose, { Schema } from "mongoose";
 
 const messageSchema = Schema({
-  messages: {
+  content: {
     type: String,
-    required: [true, "Message is requried!"],
-    trim: true,
+    required: true,
   },
   createdAt: {
     type: Date,
