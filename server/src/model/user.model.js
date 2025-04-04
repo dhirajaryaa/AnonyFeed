@@ -13,6 +13,10 @@ const userSchema = Schema({
     match: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, "Please Enter valid Email"],
     unique: true,
   },
+  password: {
+    type: String,
+    required: [true, "Password is requried!"]
+  },
   isVerifyed: {
     type: Boolean,
     default: false,
