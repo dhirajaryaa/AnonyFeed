@@ -23,7 +23,6 @@ const userSchema = Schema({
   },
   verifyCode: {
     type: Number,
-    required: [true, "Verify Code is requried!"],
   },
   verifyCodeExpiry: {
     type: Date,

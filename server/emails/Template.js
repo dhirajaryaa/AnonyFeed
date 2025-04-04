@@ -96,7 +96,7 @@ export const generateVerificationEmail = (username, verifyCode,baseUrl) => {
       <div class="valid-note">This code is valid for only 10 minutes.</div>
 
       <div class="message">Or simply click the button below to verify:</div>
-      <a href="${baseUrl}/verify?code=${verifyCode}" class="button" style=" color: #ffffff">Verify Now</a>
+      <a href="${baseUrl}/verify?user=${username}&code=${verifyCode}" class="button" style=" color: #ffffff">Verify Now</a>
 
       <div class="message">If you didn’t request this code, you can safely ignore this email.</div>
       <div class="footer">— Team AnonyFeed</div>

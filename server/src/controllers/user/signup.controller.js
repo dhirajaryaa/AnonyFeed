@@ -65,6 +65,6 @@ export const userSignUp = AsyncHandler(async (req, res) => {
   return res
     .status(200)
     .json(
-      new ApiResponse(200, "user signup successful please verify email", null)
+      new ApiResponse(201, "user signup successful please verify email", null)
     );
 });
