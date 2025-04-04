@@ -6,13 +6,13 @@ import {generateVerificationEmail as emailTemplate} from "../../emails/Template.
 
 const resend = new Resend(RESEND_API_KEY);
 
-export const sendVerifycationEmail = async (email, verifyCode, username) => {
+export const sendVerifycationEmail = async (email, verifyCode, username,baseUrl) => {
   try {
     const { data, error } = await resend.emails.send({
       from: "AnonyFeed <onboarding@resend.dev>",
       to: email,
       subject: "AnonyFeed Message | Verification Code",
-      html: emailTemplate(username,verifyCode),
+      html: emailTemplate(username,verifyCode,baseUrl),
     });
     if (error) {
       throw new ApiError(400, error.message);

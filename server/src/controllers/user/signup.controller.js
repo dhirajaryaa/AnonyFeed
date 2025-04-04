@@ -5,6 +5,7 @@ import User from "../../model/user.model.js";
 import { signUpSchema } from "../..//validator/signUpSchema.js";
 import { sendVerifycationEmail } from "../../services/resend.service.js";
 import bcrypt from "bcryptjs";
+import {BASE_URL} from "../../config/env.js"
 
 export const userSignUp = AsyncHandler(async (req, res) => {
   const { username, email, password } = req.body;
@@ -59,7 +60,7 @@ export const userSignUp = AsyncHandler(async (req, res) => {
   }
 
   // TODO: send verification email
-  await sendVerifycationEmail(email, verifyCode, username);
+  await sendVerifycationEmail(email, verifyCode, username,BASE_URL);
 
   return res
     .status(200)
