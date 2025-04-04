@@ -18,6 +18,9 @@ app.use(
     credentials: true,
   })
 );
+// Routers & Routes 
+import {userRouter} from "./routers/user.routes.js";
+app.use("/api/v1/users", userRouter); 
 
 //! error middleware setup
 import ErrorMiddleware from "./middlewares/error.middleware.js";
