@@ -28,10 +28,7 @@ export const verifyVerficationCode = AsyncHandler(async (req, res) => {
 
   // check code expired time
   const checkValidExpiredTime =
-    new Date(userExits.verifyCodeExpiry).getTime() > Date.now();
-
-    console.log(new Date(userExits.verifyCodeExpiry).getTime() , Date.now());
-    
+    new Date(userExits.verifyCodeExpiry).getTime() > Date.now();    
 
   if (!checkValidExpiredTime) {
     throw new ApiError(403, "Verification code expired");
