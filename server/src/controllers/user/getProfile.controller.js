@@ -2,16 +2,13 @@ import AsyncHandler from "../../utils/asyncHandler.js";
 import ApiError from "../../utils/apiError.js";
 import ApiResponse from "../../utils/apiResponse.js";
 import User from "../../model/user.model.js";
-import { z } from "zod";
+import {usernameValidter} from "../../validator/signUpSchema.js"
 
 
 export const getUserProfile = AsyncHandler(async (req, res) => {
   const { username } = req.params;
   // check username valid or not
-  const usernameSchema = z
-    .string()
-    .min(2, { message: "Username must be at least 2 characters long" });
-  const usernameValidation = usernameSchema.safeParse(username);
+ const usernameValidation = usernameValidter.safeParse(username);
   if (!usernameValidation.success) {
     return res
       .status(400)
