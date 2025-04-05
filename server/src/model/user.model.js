@@ -31,6 +31,9 @@ const userSchema = Schema({
     type: Boolean,
     default: true,
   },
+  refreshToken: {
+    type: String,
+  },
   messages: {
     type: mongoose.Types.ObjectId,
     ref: "Message",
