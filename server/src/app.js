@@ -25,6 +25,8 @@ app.use(cookieParser());
 // Routers & Routes 
 import {userRouter} from "./routers/user.routes.js";
 app.use("/api/v1/users", userRouter); 
+import {messageRouter} from "./routers/message.routes.js";
+app.use("/api/v1/message", messageRouter); 
 
 //! error middleware setup
 import ErrorMiddleware from "./middlewares/error.middleware.js";

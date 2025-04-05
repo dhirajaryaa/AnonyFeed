@@ -5,6 +5,10 @@ const messageSchema = Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "User",
+  },
   createdAt: {
     type: Date,
     required: true,
