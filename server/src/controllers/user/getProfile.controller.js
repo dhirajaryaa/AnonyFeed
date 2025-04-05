@@ -2,17 +2,8 @@ import AsyncHandler from "../../utils/asyncHandler.js";
 import ApiError from "../../utils/apiError.js";
 import ApiResponse from "../../utils/apiResponse.js";
 import User from "../../model/user.model.js";
-import { signInSchema } from "../..//validator/signInSchema.js";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
 import { z } from "zod";
-import {
-  ACCESS_TOKEN_EXPIRY,
-  ACCESS_TOKEN_SECRET,
-  REFRESH_TOKEN_EXPIRY,
-  REFRESH_TOKEN_SECRET,
-} from "../../config/env.js";
-import { cookieOptions } from "../../config/env.js";
+
 
 export const getUserProfile = AsyncHandler(async (req, res) => {
   const { username } = req.params;
