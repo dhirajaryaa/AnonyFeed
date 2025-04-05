@@ -25,7 +25,11 @@ export const createNewMessage = AsyncHandler(async (req, res) => {
   const user = await User.findOne({ username });
   if (!user) {
     throw new ApiError(400, "User not found");
-  }
+  };
+  // user not accept message 
+  if (!user.isMessageAccepting) {
+    throw new ApiError(400, "User not accept message");
+  };
   // create message
   const message = await Message.create({
     content,
