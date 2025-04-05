@@ -6,11 +6,14 @@ import { getUserProfile } from "../controllers/user/getProfile.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 import { refreshUserToken } from "../controllers/user/tokenRefresh.controller.js";
 import { logoutUser } from "../controllers/user/logout.controller.js";
+import { checkUsernameAvailable } from "../controllers/user/usernameAvailable.controller.js";
 
 export const userRouter = Router();
 
 // signup
 userRouter.post("/sign-up", userSignUp);
+// check username
+userRouter.get("/username", checkUsernameAvailable);
 // verify code
 userRouter.get("/verify", verifyVerficationCode);
 // login
