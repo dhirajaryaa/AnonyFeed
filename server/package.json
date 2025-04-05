@@ -1,0 +1,35 @@
+{
+  "name": "anonyfeed-backend",
+  "version": "1.0.0",
+  "description": "AnonyFeed is a MERN-based anonymous feedback app where users can generate a unique link to collect feedback. Anyone with the link can send anonymous messages, and AI provides message improvement suggestions before submission. Secure, simple, and efficient!",
+  "keywords": [
+    "anonyfeed",
+    "messagger",
+    "feedbacksystem",
+    "express",
+    "nodejs"
+  ],
+  "license": "ISC",
+  "author": "Dhiraj Arya",
+  "type": "module",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.13.1",
+    "resend": "^4.2.0",
+    "zod": "^3.24.2"
+  }
+}
