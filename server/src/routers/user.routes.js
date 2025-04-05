@@ -5,6 +5,7 @@ import { userLogin } from "../controllers/user/login.controller.js";
 import { getUserProfile } from "../controllers/user/getProfile.controller.js";
 import { verifyJWT } from "../middlewares/auth.middleware.js";
 import { refreshUserToken } from "../controllers/user/tokenRefresh.controller.js";
+import { logoutUser } from "../controllers/user/logout.controller.js";
 
 export const userRouter = Router();
 
@@ -20,3 +21,5 @@ userRouter.get("/refresh", refreshUserToken);
 //! Protected Routes
 // get user profile
 userRouter.get("/:username", verifyJWT, getUserProfile);
+// logout user
+userRouter.post("/sign-out", verifyJWT, logoutUser);
