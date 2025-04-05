@@ -1,5 +1,6 @@
 import express from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
 import { ORIGIN, ALLOW_METHODS } from "./config/env.js";
 
 const app = express();
@@ -18,6 +19,9 @@ app.use(
     credentials: true,
   })
 );
+//? cookie parser
+app.use(cookieParser());
+
 // Routers & Routes 
 import {userRouter} from "./routers/user.routes.js";
 app.use("/api/v1/users", userRouter); 
