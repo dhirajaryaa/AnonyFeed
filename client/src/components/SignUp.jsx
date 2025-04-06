@@ -25,6 +25,7 @@ function SignUp() {
     mode: "onChange",
   });
 
+
   const handleSignup = async (userInput) => {};
 
   return (
